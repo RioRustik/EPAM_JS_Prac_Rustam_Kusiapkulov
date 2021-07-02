@@ -1,7 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-// const sass = require()
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
