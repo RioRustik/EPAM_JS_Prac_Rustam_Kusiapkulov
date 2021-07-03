@@ -1,55 +1,37 @@
 import './styles/style.scss'
-// import '../node_modules/@fortawesome/fontawesome-free/js/solid'
-// import '../node_modules/@fortawesome/fontawesome-free/js/fontawesome'
-// import '../node_modules/@fortawesome/fontawesome-free/js/brands'
-
-const voices = document.querySelector('.voices');
-const speaker = document.querySelector('.speaker');
-const stream = document.querySelector('.stream');
 
 const contentVoices = document.querySelector('.contentVoices');
 const contentSpeaker = document.querySelector('.contentSpeaker');
 const contentStream = document.querySelector('.contentStream');
 
-voices.onclick = function () {
+let nav = document.querySelectorAll('.barBlock');
+let elem;
 
-    contentVoices.classList.remove("contentInactive");
-    contentSpeaker.classList.remove("contentActive");
-    contentStream.classList.remove("contentActive");
-    contentSpeaker.classList.add("contentInactive");
-    contentStream.classList.add("contentInactive");
-    contentVoices.classList.add("contentActive");
+for (var i = 0; i < nav.length; i++) {
+    nav[i].addEventListener('click', navToggle)
+}
 
-    voices.classList.add("backlightitem");
-    speaker.classList.remove("backlightitem");
-    stream.classList.remove("backlightitem");
+function navToggle(event){
+    let target = event.target.closest('button')
+    if (elem) { 
+        elem.classList.remove('backlightitem');
+    }
+    elem = target;
+    elem.classList.add('backlightitem'); 
 
-};
-
-speaker.onclick = function () {
-
-    contentSpeaker.classList.remove("contentInactive");
-    contentStream.classList.remove("contentActive");
-    contentVoices.classList.remove("contentActive");
-    contentVoices.classList.add("contentInactive");
-    contentStream.classList.add("contentInactive");
-    contentSpeaker.classList.add("contentActive");
-
-    speaker.classList.add("backlightitem");
-    voices.classList.remove("backlightitem");
-    stream.classList.remove("backlightitem");
-};
-
-stream.onclick = function () {
-
-    contentStream.classList.remove("contentInactive");
-    contentSpeaker.classList.remove("contentActive");
-    contentVoices.classList.remove("contentActive");
-    contentVoices.classList.add("contentInactive");
-    contentSpeaker.classList.add("contentInactive");
-    contentStream.classList.add("contentActive");
-
-    stream.classList.add("backlightitem");
-    voices.classList.remove("backlightitem");
-    speaker.classList.remove("backlightitem");
-};
+    if(elem.classList.contains('voices')){
+        contentVoices.classList.add("contentActive");
+        contentSpeaker.classList.remove("contentActive");
+        contentStream.classList.remove("contentActive");
+    }
+    if(elem.classList.contains('speaker')){
+        contentSpeaker.classList.add("contentActive");
+        contentVoices.classList.remove("contentActive");
+        contentStream.classList.remove("contentActive");
+    }
+    if(elem.classList.contains('stream')){
+        contentStream.classList.add("contentActive");
+        contentVoices.classList.remove("contentActive");
+        contentSpeaker.classList.remove("contentActive");
+    }
+}
