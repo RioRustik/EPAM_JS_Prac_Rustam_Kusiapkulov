@@ -5,12 +5,8 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/regular.scss';
 @import '~@fortawesome/fontawesome-free/scss/brands.scss';
 @import '~@fortawesome/fontawesome-free/scss/v4-shims.scss';
-
-
-*{
-    margin: 0;
-    padding: 0;
-}
+@import '~normalize.css/normalize.css';
+@import '~reset.css/reset.css';
 
 body{
     background-color: #ffffff;
