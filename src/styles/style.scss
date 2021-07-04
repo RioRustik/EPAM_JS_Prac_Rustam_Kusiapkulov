@@ -7,39 +7,39 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 @import '~@fortawesome/fontawesome-free/scss/v4-shims.scss';
 @import '~normalize.css/normalize.css';
 @import '~reset.css/reset.css';
+@import 'variables.scss';
+@import 'mixins.scss';
 
 body{
-    background-color: #ffffff;
+    background-color: $color_1;
     font-family: 'Montserrat', sans-serif;
     main{
-        display: flex;
+        @include blockTemplate(flex, relative);
         flex-direction: column;
-        position: relative; 
         max-width: 800px;
         width: auto;
         height: 100vh;
         margin: 0 auto; 
-        background-color: #ffffff;
+        background-color: $color_1;
         box-shadow: 0 0 10px -4px #000000c5;
         .bar{
-            display: flex;
+            @include blockTemplate(flex, absolute);
             justify-content: space-around;
-            position: absolute;
             bottom: 0;
             width: 100%;
             height: 70px;
-            background-color: #ffffff;
+            background-color: $color_1;
             box-shadow: 0 -3px 10px -4px #00000036;
             font-size: 0.8em;
             .barBlock{
                 font-family: 'Montserrat', sans-serif;
-                display: flex;
+                @include blockTemplate(flex);
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                // color: #a9a9a9;
+                color: #a9a9a9;
                 border: none;
-                background-color: #ffffff;
+                background-color: $color_1;
                 span{
                     font-size: 20px;
                     text-decoration: none;
@@ -50,18 +50,17 @@ body{
     }
 }
 .contentInactive{
-    display: none;
+    @include blockTemplate(none);
 }
 .contentActive{
-    display: flex;
+    @include blockTemplate(flex, relative);
     justify-content: center; 
-    position: relative;
     top: 40%;
     font-size: 2em;
 }
 .backlightitem{
     p, span{
-        color: #009885;
-        text-shadow: 0 0 1px #009885; 
+        color: $color_3;
+        text-shadow: 0 0 1px $color_3; 
     }
 }
