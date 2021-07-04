@@ -11,19 +11,24 @@ module.exports = {
         filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist')
     },
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    },
     plugins: [
         new HTMLWebpackPlugin({
             template: './index.html'
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: "./style/[name].css",
+            filename: "./[name].css",
           })
     ],
     module: {
         rules:[
             {
-                test: /\.(scss|snss|css)$/,
+                test: /.((c|sa|sc)ss)$/i,
                 use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
             { 
@@ -35,5 +40,5 @@ module.exports = {
                 type: 'asset/inline' 
             }
         ]
-    }
+    },
 }
