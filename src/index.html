@@ -9,22 +9,22 @@
 <body>
     <main>
         <nav class="bar">
-            <button class="barBlock voices"> 
+            <button class="voices barBlock" checkСonnect="voices"> 
                 <span class="fas fa-bars"></span> 
                 <p>Voices</p>
             </button>
-            <button class="barBlock speaker">
+            <button class="speaker barBlock" checkСonnect="speaker">
                 <span class="fas fa-microphone"></span> 
                 <p>Microphone</p>
             </button>
-            <button class="barBlock stream">
+            <button class="stream barBlock" checkСonnect="stream">
                 <span class="fas fa-broadcast-tower"></span>
                 <p>Stream</p>
             </button>
         </nav>
-        <section class="contentVoices contentInactive" >Active: allvoices - mode</section>
-        <section class="contentSpeaker contentInactive">Active: speaker - mode</section>
-        <section class="contentStream contentInactive" >Active: stream - mode</section>
+        <section class="contentVoices contentInactive" checkСonnect="voices">Active: allvoices - mode</section>
+        <section class="contentSpeaker contentInactive" checkСonnect="speaker">Active: speaker - mode</section>
+        <section class="contentStream contentInactive" checkСonnect="stream">Active: stream - mode</section>
     </main>
 </body>
 </html>
