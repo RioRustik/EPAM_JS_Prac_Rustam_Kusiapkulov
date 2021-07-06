@@ -4,9 +4,9 @@ const sectionAll = document.querySelectorAll('section');
 const nav = document.querySelectorAll('.barBlock');
 let changeElementsPage;
 let activeButtonCheck = '';
-let flag = true;
+let repeatedButtonPress = true;
 
-for (var i = 0; i < nav.length; i++) {
+for (let i = 0; i < nav.length; i++) {
     nav[i].addEventListener('click', navToggle);
 }
 
@@ -20,16 +20,17 @@ function navToggle(event){
     changeElementsPage.classList.add('backlightitem');
 
     if(activeButtonCheck == activeButton.getAttribute('checkСonnect')){
-        flag=false;
+        repeatedButtonPress = false;
     }
 
-    for (let i = 0; i < sectionAll.length; i++) {
-        if((sectionAll[i].classList.contains('contentActive') 
-        || sectionAll[i].getAttribute('checkСonnect') == activeButton.getAttribute('checkСonnect'))
-        && flag){
-            sectionAll[i].classList.toggle('contentActive');
+    for (let j = 0; j < sectionAll.length; j++) {
+        if((sectionAll[j].classList.contains('contentActive') 
+        || sectionAll[j].getAttribute('checkСonnect') == activeButton.getAttribute('checkСonnect'))
+        && repeatedButtonPress){
+            sectionAll[j].classList.toggle('contentActive');
         }
     }
-    flag = true;
-    activeButtonCheck = activeButton.getAttribute('checkСonnect')
+
+    repeatedButtonPress = true;
+    activeButtonCheck = activeButton.getAttribute('checkСonnect');
 }
