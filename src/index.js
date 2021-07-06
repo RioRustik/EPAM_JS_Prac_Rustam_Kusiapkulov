@@ -9,7 +9,6 @@ let repeatedButtonPress = true;
 for (let i = 0; i < nav.length; i++) {
     nav[i].addEventListener('click', navToggle);
 }
-
 function navToggle(event){
     let activeButton = event.target.closest('button');
 
