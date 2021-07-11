@@ -4,27 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpack</title>
+    <title>audio broadcasting</title>
 </head>
 <body>
     <main>
         <nav class="bar">
-            <button class="barBlock" checkСonnect="voices"> 
+            <button id="voicesBtn" class="barBlock" check-connect="voices"> 
                 <span class="fas fa-bars"></span> 
                 <p>Voices</p>
             </button>
-            <button class="barBlock" checkСonnect="speaker">
+            <button id="speakerBtn" class="barBlock" check-connect="speaker">
                 <span class="fas fa-microphone"></span> 
                 <p>Microphone</p>
             </button>
-            <button class="barBlock" checkСonnect="stream">
+            <button id="streamBtn" class="barBlock" check-connect="stream">
                 <span class="fas fa-broadcast-tower"></span>
                 <p>Stream</p>
             </button>
         </nav>
-        <section class="contentInactive" checkСonnect="voices">Active: allvoices - mode</section>
-        <section class="contentInactive" checkСonnect="speaker">Active: speaker - mode</section>
-        <section class="contentInactive" checkСonnect="stream">Active: stream - mode</section>
+        <section class="contentInactive" check-connect="voices">
+            <ol id="audioBlock"></ol>            
+        </section>
+        <section class="contentInactive" check-connect="speaker">
+            <div class="recordingBlock">
+                <button class="playButtonClass" id="playButton">запись</button>            
+                <div class="wave1">
+                    <div class="wave2">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contentInactive" check-connect="stream">
+            <i class="icon fas fa-volume-up"></i>
+        </section>
     </main>
 </body>
 </html>
