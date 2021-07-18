@@ -2,6 +2,7 @@ const voiceBlock = document.getElementById('voicesBtn');
 const audioBlock = document.getElementById('audioBlock');
 
 export async function voices() {
+
     audioBlock.innerHTML = "";
     const response = await fetch('https://voicy-speaker.herokuapp.com/voices');
     const data = await response.json();
